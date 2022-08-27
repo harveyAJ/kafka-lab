@@ -49,6 +49,11 @@ If cloning repo on a Windows machine, line endings might differ on some key file
 Source:
 - https://stackoverflow.com/a/47428229/5186384
 
+The command I ended up running on my Windows 10 machine was the following (note that I hard coded the $PWD and $HOME variables, and got rid of the `basename` command:
+``` shell
+> docker run -it --rm -v C:/dev/git/kafka-lab/labs:/course-root/ -w /course-root/04-Implement-Topics-And-Partitions/device-simulator -v C:/Users/valentin.roy/.m2/repository:/root/.m2/repository maven:3-jdk-11 ./mvnw clean package
+```
+
 ## Start the device-simulator
 
 Next, let's start the simulator of device messages.
