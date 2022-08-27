@@ -125,6 +125,11 @@ $ docker run --network "$(cd .. && basename "$(pwd)" | tr '[:upper:]' '[:lower:]
 
 On a windows machine, you have to replace the `$PWD` with the current directory and the `$HOME` with a directory where you have the `.m2` folder.
 
+Again, here is the command I ended up using, skipping most Unix-specfic stuff (Powershell was not too happy with the wildcard `*` so you will have to get the exact filename of the jar file)
+
+```ps1
+> docker run --network 04-implement-topics-and-partitions_default --rm -it -v C:/dev/git/kafka-lab/labs/04-Implement-Topics-And-Partitions/device-simulator:/pwd -w /pwd openjdk:11 java -jar target/device-simulator-app-1.0.0-SNAPSHOT.jar
+```
 
 You should now see a set of output similar to this:
 
