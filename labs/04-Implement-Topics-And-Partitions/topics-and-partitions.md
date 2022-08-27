@@ -45,6 +45,10 @@ $ docker run -it --rm -v "$(cd "$PWD/../.."; pwd)":/course-root -w "/course-root
 
 On a windows machine, you have to replace the `$PWD` with the current directory and the `$HOME` with a directory where you have the `.m2` folder.
 
+If cloning repo on a Windows machine, line endings might differ on some key files used by Maven to compile (\r\n instead of \n) and you might get exceptions when running above command. Solution to this is to do a search and replace (using e.g Notepad++) and replace all \r\n by \n in files mvnw and .mvn\wrapper\maven-wrapper.properties
+Source:
+- https://stackoverflow.com/a/47428229/5186384
+
 ## Start the device-simulator
 
 Next, let's start the simulator of device messages.
